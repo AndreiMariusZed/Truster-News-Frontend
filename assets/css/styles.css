@@ -1,0 +1,1034 @@
+/*!
+ * Icon Font C-Suite Design System
+ * Made with love by Icons8 [ https://icons8.com/ ] using webfont [ https://github.com/itgalaxy/webfont ]
+ *
+ * Contacts:
+ *    [ https://icons8.com/contact ]
+ *
+ * Follow Icon8 on
+ *    Twitter [ https://twitter.com/icons_8 ]
+ *    Facebook [ https://www.facebook.com/Icons8 ]
+ *    Google+ [ https://plus.google.com/+Icons8 ]
+ *    GitHub [ https://github.com/icons8 ]
+ */
+
+@font-face {
+  font-family: "C-Suite Design System";
+  src: url("../fonts/C-Suite Design System.eot");
+  src: url("../fonts/C-Suite Design System.eot?#iefix") format("embedded-opentype"),
+  url("../fonts/C-Suite Design System.woff2") format("woff2"),
+  url("../fonts/C-Suite Design System.woff") format("woff"),
+  url("../fonts/C-Suite Design System.ttf") format("truetype"),
+  url("../fonts/C-Suite Design System.svg#font") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  @font-face {
+    font-family: "C-Suite Design System";
+    src: url("../fonts/C-Suite Design System.svg#C-Suite Design System") format("svg");
+  }
+}
+
+[data-icons8]:before {
+  content: attr(data-icons8);
+}
+
+.cs-icons-about-filled:before,
+.cs-icons-about:before,
+.cs-icons-add-filled:before,
+.cs-icons-add:before,
+.cs-icons-application-file-filled:before,
+.cs-icons-application-file:before,
+.cs-icons-audio-file-filled:before,
+.cs-icons-audio-file:before,
+.cs-icons-audio-filled:before,
+.cs-icons-audio:before,
+.cs-icons-back-angle-filled:before,
+.cs-icons-back-angle:before,
+.cs-icons-back-arrow-filled:before,
+.cs-icons-back-arrow:before,
+.cs-icons-bookmark-filled:before,
+.cs-icons-bookmark:before,
+.cs-icons-calendar-filled:before,
+.cs-icons-calendar:before,
+.cs-icons-channels-filled:before,
+.cs-icons-channels:before,
+.cs-icons-chat-filled:before,
+.cs-icons-chat:before,
+.cs-icons-check-filled:before,
+.cs-icons-check-success-filled:before,
+.cs-icons-check-success:before,
+.cs-icons-check:before,
+.cs-icons-clock-filled:before,
+.cs-icons-clock:before,
+.cs-icons-close-filled:before,
+.cs-icons-close:before,
+.cs-icons-coins-filled:before,
+.cs-icons-coins:before,
+.cs-icons-comment-filled:before,
+.cs-icons-comment:before,
+.cs-icons-comments-filled:before,
+.cs-icons-comments:before,
+.cs-icons-data-filled:before,
+.cs-icons-data:before,
+.cs-icons-database-backup-filled:before,
+.cs-icons-database-backup:before,
+.cs-icons-delete-filled:before,
+.cs-icons-delete:before,
+.cs-icons-doc-filled:before,
+.cs-icons-doc:before,
+.cs-icons-download-filled:before,
+.cs-icons-download:before,
+.cs-icons-edit-filled:before,
+.cs-icons-edit-profile-filled:before,
+.cs-icons-edit-profile:before,
+.cs-icons-edit:before,
+.cs-icons-email-filled:before,
+.cs-icons-email:before,
+.cs-icons-error-filled:before,
+.cs-icons-error:before,
+.cs-icons-excel-filled:before,
+.cs-icons-excel:before,
+.cs-icons-expand-arrow-filled:before,
+.cs-icons-expand-arrow:before,
+.cs-icons-eye-filled:before,
+.cs-icons-eye-hide-filled:before,
+.cs-icons-eye-hide:before,
+.cs-icons-eye:before,
+.cs-icons-facebook-circle:before,
+.cs-icons-facebook-filled:before,
+.cs-icons-facebook:before,
+.cs-icons-filter-filled:before,
+.cs-icons-filter:before,
+.cs-icons-filter2-filled:before,
+.cs-icons-filter2:before,
+.cs-icons-first-angle-filled:before,
+.cs-icons-first-angle:before,
+.cs-icons-forward-filled:before,
+.cs-icons-forward:before,
+.cs-icons-full-screen-filled:before,
+.cs-icons-full-screen:before,
+.cs-icons-google-circle:before,
+.cs-icons-google-plus-filled:before,
+.cs-icons-google:before,
+.cs-icons-graph-filled:before,
+.cs-icons-graph:before,
+.cs-icons-group-filled:before,
+.cs-icons-group:before,
+.cs-icons-help-filled:before,
+.cs-icons-help:before,
+.cs-icons-history-filled:before,
+.cs-icons-history:before,
+.cs-icons-home-filled:before,
+.cs-icons-home:before,
+.cs-icons-image-document-filled:before,
+.cs-icons-image-document:before,
+.cs-icons-image-filled:before,
+.cs-icons-image:before,
+.cs-icons-info-filled:before,
+.cs-icons-info:before,
+.cs-icons-instagram-circle:before,
+.cs-icons-instagram-filled:before,
+.cs-icons-instagram:before,
+.cs-icons-invite-filled:before,
+.cs-icons-invite:before,
+.cs-icons-last-angle-filled:before,
+.cs-icons-last-angle:before,
+.cs-icons-learn-more-filled:before,
+.cs-icons-learn-more:before,
+.cs-icons-library-filled:before,
+.cs-icons-library:before,
+.cs-icons-light-filled:before,
+.cs-icons-light:before,
+.cs-icons-like-filled:before,
+.cs-icons-like:before,
+.cs-icons-link-filled:before,
+.cs-icons-link:before,
+.cs-icons-linkedin-filled:before,
+.cs-icons-linkedin:before,
+.cs-icons-linkeding-circle:before,
+.cs-icons-list-filled:before,
+.cs-icons-list:before,
+.cs-icons-live-filled:before,
+.cs-icons-live:before,
+.cs-icons-lock-filled:before,
+.cs-icons-lock:before,
+.cs-icons-login-filled:before,
+.cs-icons-login:before,
+.cs-icons-logout-filled:before,
+.cs-icons-logout:before,
+.cs-icons-mail-circle:before,
+.cs-icons-map-filled:before,
+.cs-icons-map:before,
+.cs-icons-marker-filled:before,
+.cs-icons-marker:before,
+.cs-icons-members-filled:before,
+.cs-icons-members:before,
+.cs-icons-menu-filled:before,
+.cs-icons-menu:before,
+.cs-icons-microphone-filled:before,
+.cs-icons-microphone:before,
+.cs-icons-microsoft-filled:before,
+.cs-icons-microsoft:before,
+.cs-icons-minus-filled:before,
+.cs-icons-minus:before,
+.cs-icons-more-filled:before,
+.cs-icons-more:before,
+.cs-icons-news-filled:before,
+.cs-icons-news:before,
+.cs-icons-next-angle-filled:before,
+.cs-icons-next-angle:before,
+.cs-icons-next-arrow-filled:before,
+.cs-icons-next-arrow:before,
+.cs-icons-no-notification-filled:before,
+.cs-icons-no-notification:before,
+.cs-icons-notification-filled:before,
+.cs-icons-notification:before,
+.cs-icons-options-filled:before,
+.cs-icons-options:before,
+.cs-icons-pause-filled:before,
+.cs-icons-pause:before,
+.cs-icons-pause2-filled:before,
+.cs-icons-pause2:before,
+.cs-icons-pdf-filled:before,
+.cs-icons-pdf:before,
+.cs-icons-phone-circle:before,
+.cs-icons-phone-filled:before,
+.cs-icons-phone:before,
+.cs-icons-photo-filled:before,
+.cs-icons-photo:before,
+.cs-icons-play-filled:before,
+.cs-icons-play:before,
+.cs-icons-plus-filled:before,
+.cs-icons-plus:before,
+.cs-icons-policy-filled:before,
+.cs-icons-policy:before,
+.cs-icons-powerpoint-filled:before,
+.cs-icons-powerpoint:before,
+.cs-icons-price-tag-filled:before,
+.cs-icons-profile-filled:before,
+.cs-icons-profile:before,
+.cs-icons-pull-refresh:before,
+.cs-icons-quote-filled:before,
+.cs-icons-quote:before,
+.cs-icons-refresh-filled:before,
+.cs-icons-remote-filled:before,
+.cs-icons-remote:before,
+.cs-icons-reply-filled:before,
+.cs-icons-reply:before,
+.cs-icons-report-filled:before,
+.cs-icons-report:before,
+.cs-icons-rewind-filled:before,
+.cs-icons-rewind:before,
+.cs-icons-search-filled:before,
+.cs-icons-search:before,
+.cs-icons-send-filled:before,
+.cs-icons-send:before,
+.cs-icons-services-filled:before,
+.cs-icons-services:before,
+.cs-icons-settings-filled:before,
+.cs-icons-settings:before,
+.cs-icons-share-filled:before,
+.cs-icons-share:before,
+.cs-icons-share2-filled:before,
+.cs-icons-share2:before,
+.cs-icons-shop-filled:before,
+.cs-icons-shop:before,
+.cs-icons-skip-filled:before,
+.cs-icons-skip:before,
+.cs-icons-smile-filled:before,
+.cs-icons-smile:before,
+.cs-icons-sort-filled:before,
+.cs-icons-sort:before,
+.cs-icons-speech-bubble-filled:before,
+.cs-icons-speech-bubble:before,
+.cs-icons-tag:before,
+.cs-icons-target-filled:before,
+.cs-icons-target:before,
+.cs-icons-ticket-filled:before,
+.cs-icons-ticket:before,
+.cs-icons-twitter-circle:before,
+.cs-icons-twitter-filled:before,
+.cs-icons-twitter:before,
+.cs-icons-txt-filled:before,
+.cs-icons-txt:before,
+.cs-icons-unavailable-filled:before,
+.cs-icons-unavailable:before,
+.cs-icons-upload-filled:before,
+.cs-icons-upload:before,
+.cs-icons-video-file-filled:before,
+.cs-icons-video-file:before,
+.cs-icons-video-filled:before,
+.cs-icons-video:before,
+.cs-icons-volume-high-filled:before,
+.cs-icons-volume-high:before,
+.cs-icons-volume-low-filled:before,
+.cs-icons-volume-low:before,
+.cs-icons-volume-mute-filled:before,
+.cs-icons-volume-mute:before,
+.cs-icons-warning-filled:before,
+.cs-icons-warning:before,
+.cs-icons-website-circle:before,
+.cs-icons-website-filled:before,
+.cs-icons-website:before,
+.cs-icons-word-filled:before,
+.cs-icons-word:before,
+.cs-icons-youtube-circle:before,
+.cs-icons-youtube-filled:before,
+.cs-icons-youtube:before,
+.cs-icons-zip-filled:before,
+.cs-icons-zip:before,
+.icons8,
+[data-icons8]:before {
+  display: inline-block;
+  font-family: "C-Suite Design System";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+
+
+.cs-icons-about-filled:before {
+  content: "\f100";
+}
+.cs-icons-about:before {
+  content: "\f101";
+}
+.cs-icons-add-filled:before {
+  content: "\f102";
+}
+.cs-icons-add:before {
+  content: "\f103";
+}
+.cs-icons-application-file-filled:before {
+  content: "\f104";
+}
+.cs-icons-application-file:before {
+  content: "\f105";
+}
+.cs-icons-audio-file-filled:before {
+  content: "\f106";
+}
+.cs-icons-audio-file:before {
+  content: "\f107";
+}
+.cs-icons-audio-filled:before {
+  content: "\f108";
+}
+.cs-icons-audio:before {
+  content: "\f109";
+}
+.cs-icons-back-angle-filled:before {
+  content: "\f10a";
+}
+.cs-icons-back-angle:before {
+  content: "\f10b";
+}
+.cs-icons-back-arrow-filled:before {
+  content: "\f10c";
+}
+.cs-icons-back-arrow:before {
+  content: "\f10d";
+}
+.cs-icons-bookmark-filled:before {
+  content: "\f10e";
+}
+.cs-icons-bookmark:before {
+  content: "\f10f";
+}
+.cs-icons-calendar-filled:before {
+  content: "\f110";
+}
+.cs-icons-calendar:before {
+  content: "\f111";
+}
+.cs-icons-channels-filled:before {
+  content: "\f112";
+}
+.cs-icons-channels:before {
+  content: "\f113";
+}
+.cs-icons-chat-filled:before {
+  content: "\f114";
+}
+.cs-icons-chat:before {
+  content: "\f115";
+}
+.cs-icons-check-filled:before {
+  content: "\f116";
+}
+.cs-icons-check-success-filled:before {
+  content: "\f117";
+}
+.cs-icons-check-success:before {
+  content: "\f118";
+}
+.cs-icons-check:before {
+  content: "\f119";
+}
+.cs-icons-clock-filled:before {
+  content: "\f11a";
+}
+.cs-icons-clock:before {
+  content: "\f11b";
+}
+.cs-icons-close-filled:before {
+  content: "\f11c";
+}
+.cs-icons-close:before {
+  content: "\f11d";
+}
+.cs-icons-coins-filled:before {
+  content: "\f11e";
+}
+.cs-icons-coins:before {
+  content: "\f11f";
+}
+.cs-icons-comment-filled:before {
+  content: "\f120";
+}
+.cs-icons-comment:before {
+  content: "\f121";
+}
+.cs-icons-comments-filled:before {
+  content: "\f122";
+}
+.cs-icons-comments:before {
+  content: "\f123";
+}
+.cs-icons-data-filled:before {
+  content: "\f124";
+}
+.cs-icons-data:before {
+  content: "\f125";
+}
+.cs-icons-database-backup-filled:before {
+  content: "\f126";
+}
+.cs-icons-database-backup:before {
+  content: "\f127";
+}
+.cs-icons-delete-filled:before {
+  content: "\f128";
+}
+.cs-icons-delete:before {
+  content: "\f129";
+}
+.cs-icons-doc-filled:before {
+  content: "\f12a";
+}
+.cs-icons-doc:before {
+  content: "\f12b";
+}
+.cs-icons-download-filled:before {
+  content: "\f12c";
+}
+.cs-icons-download:before {
+  content: "\f12d";
+}
+.cs-icons-edit-filled:before {
+  content: "\f12e";
+}
+.cs-icons-edit-profile-filled:before {
+  content: "\f12f";
+}
+.cs-icons-edit-profile:before {
+  content: "\f130";
+}
+.cs-icons-edit:before {
+  content: "\f131";
+}
+.cs-icons-email-filled:before {
+  content: "\f132";
+}
+.cs-icons-email:before {
+  content: "\f133";
+}
+.cs-icons-error-filled:before {
+  content: "\f134";
+}
+.cs-icons-error:before {
+  content: "\f135";
+}
+.cs-icons-excel-filled:before {
+  content: "\f136";
+}
+.cs-icons-excel:before {
+  content: "\f137";
+}
+.cs-icons-expand-arrow-filled:before {
+  content: "\f138";
+}
+.cs-icons-expand-arrow:before {
+  content: "\f139";
+}
+.cs-icons-eye-filled:before {
+  content: "\f13a";
+}
+.cs-icons-eye-hide-filled:before {
+  content: "\f13b";
+}
+.cs-icons-eye-hide:before {
+  content: "\f13c";
+}
+.cs-icons-eye:before {
+  content: "\f13d";
+}
+.cs-icons-facebook-circle:before {
+  content: "\f13e";
+}
+.cs-icons-facebook-filled:before {
+  content: "\f13f";
+}
+.cs-icons-facebook:before {
+  content: "\f140";
+}
+.cs-icons-filter-filled:before {
+  content: "\f141";
+}
+.cs-icons-filter:before {
+  content: "\f142";
+}
+.cs-icons-filter2-filled:before {
+  content: "\f143";
+}
+.cs-icons-filter2:before {
+  content: "\f144";
+}
+.cs-icons-first-angle-filled:before {
+  content: "\f145";
+}
+.cs-icons-first-angle:before {
+  content: "\f146";
+}
+.cs-icons-forward-filled:before {
+  content: "\f147";
+}
+.cs-icons-forward:before {
+  content: "\f148";
+}
+.cs-icons-full-screen-filled:before {
+  content: "\f149";
+}
+.cs-icons-full-screen:before {
+  content: "\f14a";
+}
+.cs-icons-google-circle:before {
+  content: "\f14b";
+}
+.cs-icons-google-plus-filled:before {
+  content: "\f14c";
+}
+.cs-icons-google:before {
+  content: "\f14d";
+}
+.cs-icons-graph-filled:before {
+  content: "\f14e";
+}
+.cs-icons-graph:before {
+  content: "\f14f";
+}
+.cs-icons-group-filled:before {
+  content: "\f150";
+}
+.cs-icons-group:before {
+  content: "\f151";
+}
+.cs-icons-help-filled:before {
+  content: "\f152";
+}
+.cs-icons-help:before {
+  content: "\f153";
+}
+.cs-icons-history-filled:before {
+  content: "\f154";
+}
+.cs-icons-history:before {
+  content: "\f155";
+}
+.cs-icons-home-filled:before {
+  content: "\f156";
+}
+.cs-icons-home:before {
+  content: "\f157";
+}
+.cs-icons-image-document-filled:before {
+  content: "\f158";
+}
+.cs-icons-image-document:before {
+  content: "\f159";
+}
+.cs-icons-image-filled:before {
+  content: "\f15a";
+}
+.cs-icons-image:before {
+  content: "\f15b";
+}
+.cs-icons-info-filled:before {
+  content: "\f15c";
+}
+.cs-icons-info:before {
+  content: "\f15d";
+}
+.cs-icons-instagram-circle:before {
+  content: "\f15e";
+}
+.cs-icons-instagram-filled:before {
+  content: "\f15f";
+}
+.cs-icons-instagram:before {
+  content: "\f160";
+}
+.cs-icons-invite-filled:before {
+  content: "\f161";
+}
+.cs-icons-invite:before {
+  content: "\f162";
+}
+.cs-icons-last-angle-filled:before {
+  content: "\f163";
+}
+.cs-icons-last-angle:before {
+  content: "\f164";
+}
+.cs-icons-learn-more-filled:before {
+  content: "\f165";
+}
+.cs-icons-learn-more:before {
+  content: "\f166";
+}
+.cs-icons-library-filled:before {
+  content: "\f167";
+}
+.cs-icons-library:before {
+  content: "\f168";
+}
+.cs-icons-light-filled:before {
+  content: "\f169";
+}
+.cs-icons-light:before {
+  content: "\f16a";
+}
+.cs-icons-like-filled:before {
+  content: "\f16b";
+}
+.cs-icons-like:before {
+  content: "\f16c";
+}
+.cs-icons-link-filled:before {
+  content: "\f16d";
+}
+.cs-icons-link:before {
+  content: "\f16e";
+}
+.cs-icons-linkedin-filled:before {
+  content: "\f16f";
+}
+.cs-icons-linkedin:before {
+  content: "\f170";
+}
+.cs-icons-linkeding-circle:before {
+  content: "\f171";
+}
+.cs-icons-list-filled:before {
+  content: "\f172";
+}
+.cs-icons-list:before {
+  content: "\f173";
+}
+.cs-icons-live-filled:before {
+  content: "\f174";
+}
+.cs-icons-live:before {
+  content: "\f175";
+}
+.cs-icons-lock-filled:before {
+  content: "\f176";
+}
+.cs-icons-lock:before {
+  content: "\f177";
+}
+.cs-icons-login-filled:before {
+  content: "\f178";
+}
+.cs-icons-login:before {
+  content: "\f179";
+}
+.cs-icons-logout-filled:before {
+  content: "\f17a";
+}
+.cs-icons-logout:before {
+  content: "\f17b";
+}
+.cs-icons-mail-circle:before {
+  content: "\f17c";
+}
+.cs-icons-map-filled:before {
+  content: "\f17d";
+}
+.cs-icons-map:before {
+  content: "\f17e";
+}
+.cs-icons-marker-filled:before {
+  content: "\f17f";
+}
+.cs-icons-marker:before {
+  content: "\f180";
+}
+.cs-icons-members-filled:before {
+  content: "\f181";
+}
+.cs-icons-members:before {
+  content: "\f182";
+}
+.cs-icons-menu-filled:before {
+  content: "\f183";
+}
+.cs-icons-menu:before {
+  content: "\f184";
+}
+.cs-icons-microphone-filled:before {
+  content: "\f185";
+}
+.cs-icons-microphone:before {
+  content: "\f186";
+}
+.cs-icons-microsoft-filled:before {
+  content: "\f187";
+}
+.cs-icons-microsoft:before {
+  content: "\f188";
+}
+.cs-icons-minus-filled:before {
+  content: "\f189";
+}
+.cs-icons-minus:before {
+  content: "\f18a";
+}
+.cs-icons-more-filled:before {
+  content: "\f18b";
+}
+.cs-icons-more:before {
+  content: "\f18c";
+}
+.cs-icons-news-filled:before {
+  content: "\f18d";
+}
+.cs-icons-news:before {
+  content: "\f18e";
+}
+.cs-icons-next-angle-filled:before {
+  content: "\f18f";
+}
+.cs-icons-next-angle:before {
+  content: "\f190";
+}
+.cs-icons-next-arrow-filled:before {
+  content: "\f191";
+}
+.cs-icons-next-arrow:before {
+  content: "\f192";
+}
+.cs-icons-no-notification-filled:before {
+  content: "\f193";
+}
+.cs-icons-no-notification:before {
+  content: "\f194";
+}
+.cs-icons-notification-filled:before {
+  content: "\f195";
+}
+.cs-icons-notification:before {
+  content: "\f196";
+}
+.cs-icons-options-filled:before {
+  content: "\f197";
+}
+.cs-icons-options:before {
+  content: "\f198";
+}
+.cs-icons-pause-filled:before {
+  content: "\f199";
+}
+.cs-icons-pause:before {
+  content: "\f19a";
+}
+.cs-icons-pause2-filled:before {
+  content: "\f19b";
+}
+.cs-icons-pause2:before {
+  content: "\f19c";
+}
+.cs-icons-pdf-filled:before {
+  content: "\f19d";
+}
+.cs-icons-pdf:before {
+  content: "\f19e";
+}
+.cs-icons-phone-circle:before {
+  content: "\f19f";
+}
+.cs-icons-phone-filled:before {
+  content: "\f1a0";
+}
+.cs-icons-phone:before {
+  content: "\f1a1";
+}
+.cs-icons-photo-filled:before {
+  content: "\f1a2";
+}
+.cs-icons-photo:before {
+  content: "\f1a3";
+}
+.cs-icons-play-filled:before {
+  content: "\f1a4";
+}
+.cs-icons-play:before {
+  content: "\f1a5";
+}
+.cs-icons-plus-filled:before {
+  content: "\f1a6";
+}
+.cs-icons-plus:before {
+  content: "\f1a7";
+}
+.cs-icons-policy-filled:before {
+  content: "\f1a8";
+}
+.cs-icons-policy:before {
+  content: "\f1a9";
+}
+.cs-icons-powerpoint-filled:before {
+  content: "\f1aa";
+}
+.cs-icons-powerpoint:before {
+  content: "\f1ab";
+}
+.cs-icons-price-tag-filled:before {
+  content: "\f1ac";
+}
+.cs-icons-profile-filled:before {
+  content: "\f1ad";
+}
+.cs-icons-profile:before {
+  content: "\f1ae";
+}
+.cs-icons-pull-refresh:before {
+  content: "\f1af";
+}
+.cs-icons-quote-filled:before {
+  content: "\f1b0";
+}
+.cs-icons-quote:before {
+  content: "\f1b1";
+}
+.cs-icons-refresh-filled:before {
+  content: "\f1b2";
+}
+.cs-icons-remote-filled:before {
+  content: "\f1b3";
+}
+.cs-icons-remote:before {
+  content: "\f1b4";
+}
+.cs-icons-reply-filled:before {
+  content: "\f1b5";
+}
+.cs-icons-reply:before {
+  content: "\f1b6";
+}
+.cs-icons-report-filled:before {
+  content: "\f1b7";
+}
+.cs-icons-report:before {
+  content: "\f1b8";
+}
+.cs-icons-rewind-filled:before {
+  content: "\f1b9";
+}
+.cs-icons-rewind:before {
+  content: "\f1ba";
+}
+.cs-icons-search-filled:before {
+  content: "\f1bb";
+}
+.cs-icons-search:before {
+  content: "\f1bc";
+}
+.cs-icons-send-filled:before {
+  content: "\f1bd";
+}
+.cs-icons-send:before {
+  content: "\f1be";
+}
+.cs-icons-services-filled:before {
+  content: "\f1bf";
+}
+.cs-icons-services:before {
+  content: "\f1c0";
+}
+.cs-icons-settings-filled:before {
+  content: "\f1c1";
+}
+.cs-icons-settings:before {
+  content: "\f1c2";
+}
+.cs-icons-share-filled:before {
+  content: "\f1c3";
+}
+.cs-icons-share:before {
+  content: "\f1c4";
+}
+.cs-icons-share2-filled:before {
+  content: "\f1c5";
+}
+.cs-icons-share2:before {
+  content: "\f1c6";
+}
+.cs-icons-shop-filled:before {
+  content: "\f1c7";
+}
+.cs-icons-shop:before {
+  content: "\f1c8";
+}
+.cs-icons-skip-filled:before {
+  content: "\f1c9";
+}
+.cs-icons-skip:before {
+  content: "\f1ca";
+}
+.cs-icons-smile-filled:before {
+  content: "\f1cb";
+}
+.cs-icons-smile:before {
+  content: "\f1cc";
+}
+.cs-icons-sort-filled:before {
+  content: "\f1cd";
+}
+.cs-icons-sort:before {
+  content: "\f1ce";
+}
+.cs-icons-speech-bubble-filled:before {
+  content: "\f1cf";
+}
+.cs-icons-speech-bubble:before {
+  content: "\f1d0";
+}
+.cs-icons-tag:before {
+  content: "\f1d1";
+}
+.cs-icons-target-filled:before {
+  content: "\f1d2";
+}
+.cs-icons-target:before {
+  content: "\f1d3";
+}
+.cs-icons-ticket-filled:before {
+  content: "\f1d4";
+}
+.cs-icons-ticket:before {
+  content: "\f1d5";
+}
+.cs-icons-twitter-circle:before {
+  content: "\f1d6";
+}
+.cs-icons-twitter-filled:before {
+  content: "\f1d7";
+}
+.cs-icons-twitter:before {
+  content: "\f1d8";
+}
+.cs-icons-txt-filled:before {
+  content: "\f1d9";
+}
+.cs-icons-txt:before {
+  content: "\f1da";
+}
+.cs-icons-unavailable-filled:before {
+  content: "\f1db";
+}
+.cs-icons-unavailable:before {
+  content: "\f1dc";
+}
+.cs-icons-upload-filled:before {
+  content: "\f1dd";
+}
+.cs-icons-upload:before {
+  content: "\f1de";
+}
+.cs-icons-video-file-filled:before {
+  content: "\f1df";
+}
+.cs-icons-video-file:before {
+  content: "\f1e0";
+}
+.cs-icons-video-filled:before {
+  content: "\f1e1";
+}
+.cs-icons-video:before {
+  content: "\f1e2";
+}
+.cs-icons-volume-high-filled:before {
+  content: "\f1e3";
+}
+.cs-icons-volume-high:before {
+  content: "\f1e4";
+}
+.cs-icons-volume-low-filled:before {
+  content: "\f1e5";
+}
+.cs-icons-volume-low:before {
+  content: "\f1e6";
+}
+.cs-icons-volume-mute-filled:before {
+  content: "\f1e7";
+}
+.cs-icons-volume-mute:before {
+  content: "\f1e8";
+}
+.cs-icons-warning-filled:before {
+  content: "\f1e9";
+}
+.cs-icons-warning:before {
+  content: "\f1ea";
+}
+.cs-icons-website-circle:before {
+  content: "\f1eb";
+}
+.cs-icons-website-filled:before {
+  content: "\f1ec";
+}
+.cs-icons-website:before {
+  content: "\f1ed";
+}
+.cs-icons-word-filled:before {
+  content: "\f1ee";
+}
+.cs-icons-word:before {
+  content: "\f1ef";
+}
+.cs-icons-youtube-circle:before {
+  content: "\f1f0";
+}
+.cs-icons-youtube-filled:before {
+  content: "\f1f1";
+}
+.cs-icons-youtube:before {
+  content: "\f1f2";
+}
+.cs-icons-zip-filled:before {
+  content: "\f1f3";
+}
+.cs-icons-zip:before {
+  content: "\f1f4";
+}
