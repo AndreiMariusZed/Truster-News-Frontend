@@ -1,13 +1,14 @@
 <template>
   <div>
-    <client-only>
-      <loading v-show="loading" />
-      <h1>CREATE ARTICLE PAGE</h1>
+    <client-only
+      ><loading v-show="loading" />
+      <h1>EDIT ARTICLE PAGE</h1>
       <cs-input
         v-model="title"
         label="Title"
         placeholder="Article title"
       ></cs-input>
+      {{ title }}
       <label>Category</label>
       <select v-model="categoryID">
         <option
@@ -18,9 +19,10 @@
           {{ category.type }}
         </option>
       </select>
+      {{ categoryID }}
       <br />
-      <input type="file" @change="onFileSelected" />
-      <p>{{ fileName }}</p>
+      <file-preview v-model="selectedFile" :previewImage="selectedFile" />
+      {{ selectedFile }}
       <br />
       <p>Content</p>
       <editor
@@ -42,7 +44,7 @@
            bullist numlist outdent indent | removeformat | help | paste | image | wordcount',
         }"
       />
-      <cs-button @click="onAddArticle">Add Article</cs-button>
+      <cs-button @click="onSaveChanges">Save Changes</cs-button>
       <fake-news-modal :show="showFakeNewsModal" @onClose="onClose" />
     </client-only>
   </div>
@@ -50,6 +52,7 @@
 
 <script>
 import Editor from "@tinymce/tinymce-vue";
+import filePreview from "@/components/filePreview.vue";
 import Loading from "@/components/Loading.vue";
 import FakeNewsModal from "@/components/FakeNewsModal.vue";
 
@@ -58,6 +61,16 @@ export default {
     editor: Editor,
     Loading,
     FakeNewsModal,
+    filePreview,
+  },
+  mounted() {
+    this.title = this.article.title;
+    this.categoryID = this.article.categoryID._id;
+    this.content = this.article.content;
+    this.selectedFile = this.article.photo;
+    this.fileName = this.article.photo.substring(
+      this.article.photo.lastIndexOf("amazonaws.com/") + 13 + 1
+    );
   },
   data() {
     return {
@@ -70,25 +83,27 @@ export default {
       showFakeNewsModal: false,
     };
   },
-  async asyncData({ $axios }) {
+  async asyncData({ $axios, params }) {
     try {
-      let response = await $axios.$get("http://localhost:3000/api/categories");
+      let categories = $axios.$get("http://localhost:3000/api/categories");
+      let article = $axios.$get(
+        `http://localhost:3000/api/articles/${params.id}`
+      );
+
+      const [categoriesResponse, articleResponse] = await Promise.all([
+        categories,
+        article,
+      ]);
       return {
-        categories: response.categories,
+        categories: categoriesResponse.categories,
+        article: articleResponse.article,
       };
     } catch (err) {
       console.log(err);
     }
   },
   methods: {
-    onFileSelected(event) {
-      this.selectedFile = event.target.files[0];
-      this.fileName = event.target.files[0].name;
-    },
-    onClose() {
-      this.showFakeNewsModal = false;
-    },
-    async onAddArticle() {
+    async onSaveChanges() {
       this.loading = true;
       try {
         let description = tinymce.activeEditor
@@ -101,28 +116,41 @@ export default {
         let data = new FormData();
         data.append("title", this.title);
         data.append("content", this.content.toString());
-        data.append("photo", this.selectedFile, this.selectedFile.name);
+        if (this.selectedFile !== this.article.photo) {
+          data.append("photo", this.selectedFile, this.selectedFile.name);
+        }
         data.append("authorID", this.$auth.$state.user.authorID);
         data.append("categoryID", this.categoryID);
         data.append("duration", duration.toString() + " min");
         data.append("description", description);
         data.append("wholeText", wholeText);
-        let response = await this.$axios.$post("/api/articles", data);
+        let response = await this.$axios.$put(
+          `/api/articles/${this.$route.params.id}`,
+          data
+        );
         if (response.success) {
           this.loading = false;
-          console.log("articol adaugat");
-          this.$router.push(`/articles/${response.article._id}`);
+          console.log("articol modificat");
+          this.$router.push(`/articles/${this.$route.params.id}`);
         } else {
           this.loading = false;
           this.showFakeNewsModal = true;
-          console.log("fake news");
+          console.log(" ERAORE!!! articol nemodificat");
         }
       } catch (err) {
         console.log(err);
       }
     },
+    onClose() {
+      this.showFakeNewsModal = false;
+    },
   },
 };
 </script>
 
-<style></style>
+<style scoped>
+.article-img {
+  width: 300px;
+  height: 200px;
+}
+</style>

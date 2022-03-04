@@ -8,8 +8,6 @@
       :author="article.source.name"
       :duration="article.duration"
     >
-      <i class="cs-icons-delete" slot="options"></i>
-      <i class="cs-icons-edit" slot="options"></i>
       <i class="cs-icons-share" slot="options"></i>
     </cs-article-card>
   </div>

@@ -1,0 +1,15 @@
+[
+  { "label": "Tesla", "value": "Tesla" },
+  { "label": "Bitcoin", "value": "Bitcoin" },
+  { "label": "Formula 1", "value": "Formula 1" },
+  { "label": "Facebook", "value": "Facebook" },
+  { "label": "Stock Market", "value": "Stock Market" },
+  { "label": "Donald Trump", "value": "Donald Trump" },
+  { "label": "Covid", "value": "Covid" },
+  { "label": "Music", "value": "Music" },
+  { "label": "Space", "value": "Space" },
+  { "label": "Food", "value": "Food" },
+  { "label": "Golf", "value": "Golf" },
+  { "label": "CES 2022", "value": "CES 2022" },
+  { "label": "Health", "value": "Health" }
+]

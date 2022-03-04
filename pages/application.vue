@@ -8,6 +8,15 @@
         placeholder="Enter a description"
       ></cs-input>
       <h1>CREATE ARTICLE FOR DEMONSTRATION OF YOUR SKILLS</h1>
+      <p>Select the topic</p>
+      <cs-button-group
+        v-if="allTopics"
+        fade
+        @input="onInput"
+        :buttons="allTopics"
+      >
+      </cs-button-group>
+      {{ selectedTopic }}
       <cs-input
         v-model="title"
         label="Title"
@@ -49,6 +58,7 @@
 
 <script>
 import Editor from "@tinymce/tinymce-vue";
+import topics from "@/assets/topics/topics";
 export default {
   components: {
     editor: Editor,
@@ -56,13 +66,21 @@ export default {
   data() {
     return {
       description: "",
+      allTopics: [],
       title: "",
       content: "",
       selectedFile: null,
       fileName: null,
       selectedCV: null,
       cvName: null,
+      selectedTopic: null,
     };
+  },
+  mounted() {
+    const shuffled = topics.sort(() => 0.5 - Math.random());
+    for (let i = 0; i < 5; i++) {
+      this.allTopics.push(shuffled[i]);
+    }
   },
   methods: {
     onFileSelected(event) {
@@ -89,6 +107,9 @@ export default {
       } catch (err) {
         console.log(err);
       }
+    },
+    onInput(val) {
+      this.selectedTopic = val[0].label;
     },
   },
 };
