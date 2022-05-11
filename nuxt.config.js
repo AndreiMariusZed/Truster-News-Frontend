@@ -1,4 +1,5 @@
-const URL = "http://localhost:3000";
+// const URL = "http://localhost:3000";
+const URL = "https://truster-ai.herokuapp.com/";
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
