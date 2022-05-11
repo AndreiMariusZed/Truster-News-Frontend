@@ -70,7 +70,7 @@ export default {
     },
   },
   server: {
-    port: process.env.PORT || 8000, // default: 3000
+    port: process.env.PORT || 8000, // default:3000
   },
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
