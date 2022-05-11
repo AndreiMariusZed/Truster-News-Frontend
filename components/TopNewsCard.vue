@@ -1,7 +1,6 @@
 <template>
   <div @click="goToArticleURL">
     <cs-article-card
-      picture-position="top"
       :picture="article.urlToImage"
       :title="article.title"
       :summary="article.description"

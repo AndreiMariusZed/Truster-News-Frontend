@@ -25,8 +25,9 @@ export default {
 .articles-list {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
 }
 .articles-list >>> .cs-article-card {
-  width: 350px;
+  /* width: 550px; */
 }
 </style>

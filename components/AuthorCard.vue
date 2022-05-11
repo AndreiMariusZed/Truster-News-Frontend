@@ -3,6 +3,7 @@
     <client-only>
       <div class="author-card">
         <cs-profile
+          v-if="author.userID"
           :to="toAuthorDetailPage"
           :name="name"
           :detail="description"

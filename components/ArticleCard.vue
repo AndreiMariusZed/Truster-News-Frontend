@@ -2,7 +2,6 @@
   <div>
     <div @click="goToArticleDetail" v-if="article.authorID">
       <cs-article-card
-        picture-position="top"
         :picture="article.photo"
         :title="article.title"
         :summary="article.description"
@@ -75,21 +74,30 @@ export default {
       this.$router.push(`/editarticle/${this.article._id}`);
     },
     async bookmarkArticle() {
-      console.log("Add to bookmarks");
       let articleID = {
         articleID: this.article._id,
       };
+      let response = null;
       try {
-        let response = await this.$axios.put(
-          `/api/addbookmark/${this.$auth.$state.user._id}`,
-          articleID
-        );
-        console.log(response.status < 399);
-        if (response.status < 399) {
-          console.log("articol adaugat la bookmark");
-          await this.$nuxt.refresh();
+        if (
+          this.$auth.$state.user.bookmarkedArticles.indexOf(this.article._id) >
+            -1 ===
+          true
+        ) {
+          response = await this.$axios.$delete(
+            `/api/removebookmark/${this.$auth.$state.user._id}`,
+            { data: { id: this.article._id } }
+          );
         } else {
-          console.log("articol nu a fost adaugat la bookmark");
+          response = await this.$axios.$put(
+            `/api/addbookmark/${this.$auth.$state.user._id}`,
+            articleID
+          );
+        }
+        console.log(response.status < 399);
+        if (response && response.success === true) {
+          console.log("asdasdasdas");
+          await this.$auth.fetchUser();
         }
       } catch (err) {
         console.log(err);
@@ -125,7 +133,9 @@ export default {
       } else return false;
     },
     filled() {
-      return this.article.isBookmarked
+      return this.$auth.$state.user &&
+        this.$auth.$state.user.bookmarkedArticles &&
+        this.$auth.$state.user.bookmarkedArticles.indexOf(this.article._id) > -1
         ? "cs-icons-bookmark-filled"
         : "cs-icons-bookmark";
     },

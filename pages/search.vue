@@ -1,25 +1,6 @@
 <template>
   <div>
-    <p>Home page</p>
-    <nuxt-link
-      to="/create"
-      v-if="$auth.$state.user && $auth.$state.user.isAuthor"
-      >Create Article</nuxt-link
-    >
-    <nuxt-link
-      to="/application"
-      v-if="$auth.$state.user && !$auth.$state.user.isAuthor"
-      >Apply to become an author</nuxt-link
-    >
-    <!-- <client-only v-if="articles">
-      <articles-list :articles="articles"
-    /></client-only> -->
     <articles-list :articles="articles" />
-    <!-- <article-card
-      v-for="article in articles"
-      :key="article.objectID"
-      :article="article"
-    /> -->
   </div>
 </template>
 

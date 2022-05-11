@@ -16,7 +16,6 @@
         ></cs-input>
         <cs-button @click="onSaveChanges">Save changes</cs-button>
       </div>
-      {{ $auth.$state.user }}
     </client-only>
   </div>
 </template>
@@ -77,17 +76,14 @@ export default {
 * >>> .cs-input__input {
   width: 300px !important;
 }
-.container {
+/* .container {
   width: 100%;
   height: 100%;
   position: relative;
-}
+} */
 .child {
-  width: 500px;
-  height: 500px;
-  /* Center vertically and horizontally */
-  position: absolute;
-  top: 50%;
-  left: 43%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 </style>

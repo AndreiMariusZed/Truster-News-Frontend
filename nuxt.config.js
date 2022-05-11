@@ -13,10 +13,17 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: ["~/assets/css/styles.min.css"],
+  css: [
+    "@/assets/scss/custom.scss",
+    "~/assets/css/styles.min.css",
+    "@/assets/css/global.css",
+  ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [{ src: "~/plugins/cs-components.js", mode: "client" }],
+  plugins: [
+    "~/plugins/bootstrap.js",
+    { src: "~/plugins/cs-components.js", mode: "client" },
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -32,8 +39,21 @@ export default {
     "@nuxtjs/pwa",
     "@nuxtjs/auth",
     "vue-social-sharing/nuxt",
+    "bootstrap-vue/nuxt",
+    "@nuxtjs/strapi",
   ],
-
+  module: {
+    rules: [
+      {
+        test: /\.s[ac]ss$/i,
+        use: ["style-loader", "css-loader", "sass-loader"],
+      },
+    ],
+  },
+  bootstrapVue: {
+    bootstrapCSS: false,
+    icons: true,
+  },
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     proxy: true,
@@ -52,7 +72,18 @@ export default {
     port: 8000, // default: 3000
   },
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
+  build: {
+    // extend: (config) => {
+    //   const svgRule = config.module.rules.find((rule) =>
+    //     rule.test.test(".svg")
+    //   );
+    //   svgRule.test = /\.(png|jpe?g|gif|webp)$/;
+    //   config.module.rules.push({
+    //     test: /\.svg$/,
+    //     use: ["babel-loader", "vue-svg-loader"],
+    //   });
+    // },
+  },
   auth: {
     strategies: {
       local: {

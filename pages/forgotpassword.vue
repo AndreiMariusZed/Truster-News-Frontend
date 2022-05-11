@@ -1,78 +1,44 @@
 <template>
-  <div class="form-wrap">
-    <div class="login">
-      <p class="login-register">
-        Already have an account?
-        <nuxt-link to="/login">Login</nuxt-link>
-      </p>
-      <h2>Create your NewsSite Account</h2>
-      <div class="inputs">
-        <div class="input">
-          <input type="text" placeholder="First Name" v-model="firstName" />
-          <i class="cs-icons-profile icon"></i>
+  <div class="reset-password">
+    <div class="form-wrap">
+      <div class="login">
+        <p class="login-register">
+          Back to
+          <nuxt-link to="/login">Login</nuxt-link>
+        </p>
+        <h2>Reset Password</h2>
+        <p>Forgot your password? Enter your email to reset it!</p>
+        <div class="inputs">
+          <div class="input">
+            <input type="text" placeholder="Email" v-model="email" />
+            <i class="cs-icons-email icon"></i>
+          </div>
         </div>
-        <div class="input">
-          <input type="text" placeholder="Last Name" v-model="lastName" />
-          <i class="cs-icons-profile icon"></i>
-        </div>
-        <div class="input">
-          <input type="text" placeholder="Username" v-model="username" />
-          <i class="cs-icons-profile icon"></i>
-        </div>
-        <div class="input">
-          <input type="text" placeholder="Email" v-model="email" />
-          <i class="cs-icons-email icon"></i>
-        </div>
-        <div class="input">
-          <input type="password" placeholder="Password" v-model="password" />
-          <i class="cs-icons-lock icon"></i>
-        </div>
+        <client-only>
+          <cs-button @click="resetPassword">Reset</cs-button>
+        </client-only>
+        <div class="angle"></div>
       </div>
-      <cs-button @click="onSignUp">Sign Up</cs-button>
-      <div class="angle"></div>
+      <div class="background"></div>
     </div>
-    <div class="background"></div>
   </div>
 </template>
 
 <script>
 export default {
+  name: "ForgotPassword",
   middleware: "auth",
   auth: "guest",
   layout: "none",
   data() {
     return {
-      firstName: "",
-      lastName: "",
-      username: "",
       email: "",
-      password: "",
     };
   },
   methods: {
-    async onSignUp() {
-      try {
-        let data = {
-          firstName: this.firstName,
-          lastName: this.lastName,
-          username: this.username,
-          email: this.email,
-          password: this.password,
-        };
-        let response = await this.$axios.$post("/api/auth/signup", data);
-        console.log(response);
-        if (response.success) {
-          this.$auth.loginWith("local", {
-            data: {
-              email: this.email,
-              password: this.password,
-            },
-          });
-          this.$router.push("/");
-        }
-      } catch (err) {
-        console.log(err);
-      }
+    async resetPassword() {
+      await this.$strapi.forgotPassword({ email: "andreimariuszed@gmail.com" });
+      console.log("asdsa");
     },
   },
 };
@@ -168,7 +134,7 @@ a {
   position: absolute;
   background-color: #fff;
   transform: rotateZ(3deg);
-  width: 90px;
+  width: 150px;
   right: -60px;
   height: 101%;
 }
@@ -189,8 +155,5 @@ a {
   .form-wrap .background {
     display: initial;
   }
-}
-.register h2 {
-  max-width: 350px;
 }
 </style>
