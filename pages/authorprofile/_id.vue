@@ -17,9 +17,7 @@ export default {
   components: { ArticlesList },
   async asyncData({ $axios, params }) {
     try {
-      let response = await $axios.$get(
-        `http://localhost:3000/api/authorsdetail/${params.id}`
-      );
+      let response = await $axios.$get(`/api/authorsdetail/${params.id}`);
       return {
         author: response.author,
         articles: response.articles,

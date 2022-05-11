@@ -19,7 +19,7 @@
       <app-page-menu title="Categories" no-border>
         <div class="topics">
           <app-page-menu-item
-            v-for="category in categories.categories"
+            v-for="category in categories"
             :key="category.type"
             :label="category.type"
             :to="`/articles/category/${category._id}`"
@@ -44,9 +44,9 @@ export default {
     };
   },
   async fetch() {
-    this.categories = await fetch("http://localhost:3000/api/categories").then(
-      (res) => res.json()
-    );
+    this.categories = await this.$axios
+      .$get("/api/categories")
+      .then((res) => res.categories);
   },
 };
 </script>

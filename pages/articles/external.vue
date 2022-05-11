@@ -12,7 +12,7 @@ export default {
   components: { TopNewsList },
   async asyncData({ $axios }) {
     try {
-      let topnews = $axios.$get("http://localhost:3000/api/topnews");
+      let topnews = $axios.$get("/api/topnews");
       const [topnewsResponse] = await Promise.all([topnews]);
       return {
         topnews: topnewsResponse.topnews,

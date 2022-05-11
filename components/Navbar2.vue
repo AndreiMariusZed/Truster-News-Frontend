@@ -87,14 +87,8 @@ export default {
   components: {
     Navbar,
   },
-  async fetch() {
-    this.categories = await fetch("http://localhost:3000/api/categories").then(
-      (res) => res.json()
-    );
-  },
   data() {
     return {
-      categories: [],
       query: "",
     };
   },

@@ -11,7 +11,7 @@ import ArticlesList from "@/components/ArticlesList.vue";
 export default {
   async asyncData({ $axios }) {
     try {
-      let response = await $axios.$get("http://localhost:3000/api/mosttrusted");
+      let response = await $axios.$get("/api/mosttrusted");
       return {
         articles: response.articles,
       };

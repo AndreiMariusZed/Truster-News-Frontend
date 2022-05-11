@@ -111,7 +111,7 @@ export default {
       console.log("delete article");
       try {
         let response = await this.$axios.$delete(
-          `http://localhost:3000/api/articles/${this.article._id}`
+          `/api/articles/${this.article._id}`
         );
         if (response.success) {
           this.showDeleteArticleModal = false;

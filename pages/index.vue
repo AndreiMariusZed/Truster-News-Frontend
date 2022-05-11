@@ -13,7 +13,7 @@ export default {
   components: { ArticlesList },
   async asyncData({ $axios }) {
     try {
-      let articles = $axios.$get("http://localhost:3000/api/articles");
+      let articles = $axios.$get("/api/articles");
       const [articlesResponse] = await Promise.all([articles]);
       return {
         articles: articlesResponse.articles,

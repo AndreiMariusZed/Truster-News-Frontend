@@ -10,9 +10,7 @@ export default {
   components: { AuthorList },
   async asyncData({ $axios }) {
     try {
-      let response = await $axios.$get(
-        "http://localhost:3000/api/mosttrustedauthors"
-      );
+      let response = await $axios.$get("/api/mosttrustedauthors");
       return {
         authors: response.authors,
       };

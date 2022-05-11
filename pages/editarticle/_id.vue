@@ -85,10 +85,8 @@ export default {
   },
   async asyncData({ $axios, params }) {
     try {
-      let categories = $axios.$get("http://localhost:3000/api/categories");
-      let article = $axios.$get(
-        `http://localhost:3000/api/articles/${params.id}`
-      );
+      let categories = $axios.$get("/api/categories");
+      let article = $axios.$get(`/api/articles/${params.id}`);
 
       const [categoriesResponse, articleResponse] = await Promise.all([
         categories,

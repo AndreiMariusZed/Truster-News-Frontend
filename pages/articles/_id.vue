@@ -46,9 +46,7 @@ import ArticleCommentsList from "@/components/ArticleCommentsList.vue";
 export default {
   async asyncData({ $axios, params }) {
     try {
-      let response = await $axios.$get(
-        `http://localhost:3000/api/articles/${params.id}`
-      );
+      let response = await $axios.$get(`/api/articles/${params.id}`);
       return {
         article: response.article,
       };

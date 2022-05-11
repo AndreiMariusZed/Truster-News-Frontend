@@ -20,7 +20,6 @@
 
 <script>
 import Navbar2 from "@/components/Navbar2.vue";
-import MyNavbar from "@/components/MyNavbar.vue";
 import Footer from "@/components/Footer.vue";
 import LeftSidebar from "@/components/LeftSidebar.vue";
 import CheckUrl from "@/components/CheckUrl.vue";
@@ -31,7 +30,6 @@ export default {
     Footer,
     LeftSidebar,
     CheckUrl,
-    MyNavbar,
   },
 };
 </script>
