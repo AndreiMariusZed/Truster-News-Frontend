@@ -10,6 +10,7 @@
         label="Most Trusted Authors"
         :to="`/trustedauthors`"
       />
+      <app-page-menu-item label="Followed Authors" :to="`/followedauthors`" />
       <app-page-menu-item
         label="Recently Viewed Articles"
         :to="`/articles/recentlyviewed`"

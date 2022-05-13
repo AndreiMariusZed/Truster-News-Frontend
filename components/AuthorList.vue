@@ -14,6 +14,10 @@ export default {
 
 <style scoped>
 .authors-list {
-  display: flex;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  grid-template-columns: 25% 25% 25% 25%;
 }
 </style>

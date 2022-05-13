@@ -1,14 +1,14 @@
 <template>
-  <div>
+  <div class="publisher-circle-container">
     <client-only>
-      <div class="author-card">
+      <div class="publisher-circle">
         <cs-profile
           v-if="author.userID"
           :to="toAuthorDetailPage"
           :name="name"
+          avatar-size="medium"
           :detail="description"
           :picture="author.userID.photo"
-          location="London"
           class="author-profile"
         >
         </cs-profile>
@@ -37,24 +37,39 @@ export default {
         this.$auth.$state.user.followedAuthors.find(
           (x) => x._id === this.author._id
         )
-        ? "Follow"
-        : "Unfollow";
+        ? "Unfollow"
+        : "Follow";
     },
   },
   methods: {
     async followAuthor() {
-      console.log("follow author");
       let authorID = {
         authorID: this.author._id,
       };
+      let response = null;
       try {
-        let response = await this.$axios.put(`/api/followauthor`, authorID);
-        console.log(response.status < 399);
-        if (response.status < 399) {
-          console.log("author adaugat la follow");
-          // await this.$nuxt.refresh();
+        if (
+          this.$auth.$state.user &&
+          this.$auth.$state.user.followedAuthors &&
+          this.$auth.$state.user.followedAuthors.find(
+            (x) => x._id === this.author._id
+          )
+        ) {
+          console.log("remove author");
+          response = await this.$axios.$delete(
+            `/api/removefollow/${this.$auth.$state.user._id}`,
+            { data: { id: this.author._id } }
+          );
         } else {
-          console.log("author nu a fost adaugat la follow");
+          console.log("follow author");
+          response = await this.$axios.put(`/api/followauthor`, authorID);
+        }
+        console.log(response, response.status);
+        if (
+          response &&
+          (response.status === 200 || response.success === true)
+        ) {
+          await this.$auth.fetchUser();
         }
       } catch (err) {
         console.log(err);
@@ -65,12 +80,19 @@ export default {
 </script>
 
 <style scoped>
-.author-card {
-  display: flex;
+.publisher-circle {
+  display: inline-flex;
   flex-direction: column;
-  margin: 20px;
+  align-items: center;
+  text-align: center;
+  width: 150px;
+  height: 225px;
+  background-color: white;
 }
 .author-profile {
+  width: fit-content;
+}
+.publisher-circle-container {
   width: fit-content;
 }
 </style>

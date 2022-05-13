@@ -1,49 +1,24 @@
 <template>
   <div v-if="article">
-    <p>{{ article.title }}</p>
-    <p>{{ article.trustworthy }} credibility</p>
-    <p>{{ article.categoryID.type }}</p>
-    <p>
-      {{ article.authorID.userID.firstName }}
-      {{ article.authorID.userID.lastName }}
-    </p>
-    <client-only>
-      <cs-profile
-        avatar-position="left"
-        :name="authorName"
-        detail="Author"
-        :picture="article.authorID.userID.photo"
-        :to="toAuthorDetailPage"
-      >
-      </cs-profile>
-      <p>{{ article.views }} views</p>
-      <p>{{ article.duration }}</p>
-      <cs-button :to="toEditArticle">Edit Article</cs-button>
-      <img :src="article.photo" alt="" class="article-img" />
-      <div v-html="article.content"></div>
-      <br />
-      <br />
-      <article-comments-list :comments="article.comments" />
-      <cs-message-box
-        v-model="draftComment"
-        class="post-comment-composer"
-        placeholder="Write a comment...."
-        variant="primary"
-        show-border
-        show-attachments
-        @send="insertComment()"
-      >
-      </cs-message-box>
-      <br />
-      <br />
-    </client-only>
+    <b-container>
+      <b-row>
+        <b-col xl="8">
+          <article-detail-left :article="article" />
+        </b-col>
+        <b-col xl="4">
+          <article-detail-comments :article="article" />
+        </b-col>
+      </b-row>
+    </b-container>
   </div>
 </template>
 
 <script>
-import ArticleCommentsList from "@/components/ArticleCommentsList.vue";
+import ArticleDetailLeft from "@/components/ArticleDetailLeft.vue";
+import ArticleDetailComments from "@/components/ArticleDetailComments.vue";
 
 export default {
+  layout: "articledetail",
   async asyncData({ $axios, params }) {
     try {
       let response = await $axios.$get(`/api/articles/${params.id}`);
@@ -55,27 +30,8 @@ export default {
     }
   },
   components: {
-    ArticleCommentsList,
-  },
-  data() {
-    return {
-      draftComment: "",
-    };
-  },
-  computed: {
-    authorName() {
-      return (
-        this.article.authorID.userID.firstName +
-        " " +
-        this.article.authorID.userID.lastName
-      );
-    },
-    toAuthorDetailPage() {
-      return `/authorprofile/${this.article.authorID._id}`;
-    },
-    toEditArticle() {
-      return `/editarticle/${this.article._id}`;
-    },
+    ArticleDetailLeft,
+    ArticleDetailComments,
   },
   mounted() {
     this.addRecentlyViewed();
@@ -110,30 +66,6 @@ export default {
         console.log(err);
       }
     },
-    async insertComment() {
-      let comment = {
-        author: {
-          name: this.$auth.$state.user.username,
-          picture: this.$auth.$state.user.photo,
-        },
-        message: this.draftComment,
-      };
-      try {
-        let response = await this.$axios.put(
-          `/api/addcomment/${this.article._id}`,
-          comment
-        );
-        console.log(response.status < 399);
-        if (response.status < 399) {
-          console.log("comentariu adaugat");
-          await this.$nuxt.refresh();
-        } else {
-          console.log("comentariul nu a fost adaugat");
-        }
-      } catch (err) {
-        console.log(err);
-      }
-    },
     async addRecentlyViewed() {
       console.log("Add to recently viewed");
       let articleID = {
@@ -159,12 +91,4 @@ export default {
 };
 </script>
 
-<style scoped>
-.article-img {
-  width: 300px;
-  height: 200px;
-}
-.post-comment-composer {
-  margin-bottom: 15px;
-}
-</style>
+<style scoped></style>

@@ -1,12 +1,17 @@
 <template>
   <div>
-    <div @click="goToArticleDetail" v-if="article.authorID">
+    <div
+      @click="goToArticleDetail"
+      v-if="article.authorID"
+      class="article-card"
+    >
       <cs-article-card
         :picture="article.photo"
         :title="article.title"
         :summary="article.description"
-        :author="article.authorID.userID.username"
+        :author="name"
         :duration="article.duration"
+        :author-picture="authorPicture"
       >
         <i
           class="cs-icons-delete"
@@ -56,6 +61,7 @@ export default {
     return {
       showSocialShareModal: false,
       showDeleteArticleModal: false,
+      defaultPicture: require("@/assets/profile-default.jpg"),
     };
   },
   props: ["article"],
@@ -132,6 +138,16 @@ export default {
         } else return false;
       } else return false;
     },
+    name() {
+      return (
+        this.article.authorID.userID.firstName +
+        " " +
+        this.article.authorID.userID.lastName
+      );
+    },
+    authorPicture() {
+      return this.article.authorID.userID.photo || this.defaultPicture;
+    },
     filled() {
       return this.$auth.$state.user &&
         this.$auth.$state.user.bookmarkedArticles &&
@@ -151,5 +167,20 @@ i {
 }
 .bookmark-button.active {
   color: var(--cs-primary-base);
+}
+.article-card >>> .cs-article-card__summary {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.article-card >>> .cs-article-card__title {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.article-card >>> .cs-card {
+  margin: 10px;
 }
 </style>

@@ -1,22 +1,24 @@
 <template>
   <cs-modal :backdrop="backdrop" @close="onClose" :show="show">
-    <div slot="header">Share this article to desired social media</div>
-    <div slot="body">
+    <div slot="header">Share Article</div>
+    <div slot="body" class="share-networks">
       <ShareNetwork
         v-for="network in networks"
         :network="network.network"
         :key="network.network"
-        :style="{ backgroundColor: network.color }"
         :url="sharing.url"
         :title="sharing.title"
+        :style="{ backgroundColor: network.color }"
         :description="sharing.description"
         :quote="sharing.quote"
         :hashtags="sharing.hashtags"
         :twitterUser="sharing.twitterUser"
         class="share-network"
       >
-        <i :class="network.icon"></i>
-        <span>{{ network.name }}</span>
+        <div class="share-network-content">
+          <fa :icon="network.icon" />
+          <span>{{ network.name }}</span>
+        </div>
       </ShareNetwork>
     </div>
     <cs-button slot="main" @click="onClose" variant="default">Cancel</cs-button>
@@ -29,9 +31,9 @@ export default {
     return {
       backdrop: true,
       sharing: {
-        // url: `https://localhost:8000/articles/${this.article._id}`,
-        url: "https://www.npmjs.com/package/vue-social-sharing",
+        url: `https://truster-news.herokuapp.com/articles/${this.article._id}`,
         title: this.article.title,
+        quote: this.article.description,
         description: this.article.description,
         hashtags: "truster",
       },
@@ -39,7 +41,7 @@ export default {
         {
           network: "email",
           name: "Email",
-          icon: "far fah fa-lg fa-envelope",
+          icon: "envelope",
           color: "#333333",
         },
         {
@@ -53,18 +55,6 @@ export default {
           name: "LinkedIn",
           icon: "fab fah fa-lg fa-linkedin",
           color: "#007bb5",
-        },
-        {
-          network: "messenger",
-          name: "Messenger",
-          icon: "fab fah fa-lg fa-facebook-messenger",
-          color: "#0084ff",
-        },
-        {
-          network: "pinterest",
-          name: "Pinterest",
-          icon: "fab fah fa-lg fa-pinterest",
-          color: "#bd081c",
         },
         {
           network: "reddit",
@@ -97,12 +87,6 @@ export default {
           color: "#1da1f2",
         },
         {
-          network: "vk",
-          name: "Vk",
-          icon: "fab fah fa-lg fa-vk",
-          color: "#4a76a8",
-        },
-        {
           network: "whatsapp",
           name: "Whatsapp",
           icon: "fab fah fa-lg fa-whatsapp",
@@ -121,7 +105,21 @@ export default {
 </script>
 
 <style scoped>
+.share-networks {
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+}
 .share-network {
   margin: 10px;
+  display: flex;
+  font-size: 24px;
+  text-decoration: none;
+  color: white;
+  border-radius: 5px;
+  align-items: center;
+  align-content: center;
+  justify-content: space-around;
+}
+.share-network-content {
 }
 </style>
