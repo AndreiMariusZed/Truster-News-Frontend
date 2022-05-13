@@ -12,7 +12,7 @@
           class="author-profile"
         >
         </cs-profile>
-        <cs-button @click="followAuthor">Follow</cs-button>
+        <cs-button @click="followAuthor">{{ buttonText }}</cs-button>
       </div>
     </client-only>
   </div>
@@ -30,6 +30,15 @@ export default {
     },
     description() {
       return this.author.trust + " Credibility";
+    },
+    buttonText() {
+      return this.$auth.$state.user &&
+        this.$auth.$state.user.followedAuthors &&
+        this.$auth.$state.user.followedAuthors.find(
+          (x) => x._id === this.author._id
+        )
+        ? "Follow"
+        : "Unfollow";
     },
   },
   methods: {

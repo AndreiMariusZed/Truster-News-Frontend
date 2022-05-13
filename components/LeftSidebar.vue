@@ -14,6 +14,12 @@
         label="Recently Viewed Articles"
         :to="`/articles/recentlyviewed`"
       />
+
+      <app-page-menu-item
+        label="Bookmarked Articles"
+        :to="`/articles/bookmarked`"
+      />
+
       <app-page-menu-item label="External News" :to="`/articles/external`" />
 
       <app-page-menu title="Categories" no-border>

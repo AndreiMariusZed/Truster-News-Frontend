@@ -80,9 +80,9 @@ export default {
       let response = null;
       try {
         if (
-          this.$auth.$state.user.bookmarkedArticles.indexOf(this.article._id) >
-            -1 ===
-          true
+          this.$auth.$state.user.bookmarkedArticles.find(
+            (x) => x._id === this.article._id
+          )
         ) {
           response = await this.$axios.$delete(
             `/api/removebookmark/${this.$auth.$state.user._id}`,
@@ -135,7 +135,9 @@ export default {
     filled() {
       return this.$auth.$state.user &&
         this.$auth.$state.user.bookmarkedArticles &&
-        this.$auth.$state.user.bookmarkedArticles.indexOf(this.article._id) > -1
+        this.$auth.$state.user.bookmarkedArticles.find(
+          (x) => x._id === this.article._id
+        )
         ? "cs-icons-bookmark-filled"
         : "cs-icons-bookmark";
     },
